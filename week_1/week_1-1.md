@@ -2,5 +2,5 @@
 ### **과제 1. 순서도 제작**
 > 2족 보행 로봇이 있습니다. 해당 로봇에 대한 '걷다'라는 기능을 디자인 해보시오.
 >
-![Alt text](walk_flow_chart.png)
+![Alt text](/image/walk_flow_chart.png)
 ---
