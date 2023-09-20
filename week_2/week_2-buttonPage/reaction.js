@@ -1,3 +1,10 @@
+function random() {
+  let color = Math.floor(Math.random() * 6);
+  let shape = Math.floor(Math.random() * 6);
+    document.getElementById("color").value = color;
+    document.getElementById("shape").value = shape;
+}
+
 if (shape == 0) {
     star = ['  *  ',' *** ','*****',' *** ','  *  '];
     for(let i = 0; i < 5; i++) {
