@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<html>
+<head>
+    <title>Press the Button</title>
+</head>
+<body>
+    <p class="title">Press the Button</p>
+    <form method="post">
+        <input type="hidden" id="color" value=""/>
+        <input type="hidden" id="shape" value=""/>
+        <div class="button"><input type="submit" id="click" value="Click"></div>
+    </form>
+    <script>
+        let color = Math.floor(Math.random() * 6);
+        let shape = Math.floor(Math.random() * 6);
+        document.getElementById("color").value = color;
+        document.getElementById("shape").value = shape;
+    </script>
+    <div id="fontColor">
+    <script>
+        let randomColor = ['#fa1010', '#2a6099', '#ffff00', '#00a933', '#800080'];
+        document.getElementById ( "fontColor" ).style.color = randomColor[color];
+    </script>
+    <script src="reaction.js"></script>
+    </div>
+</div>
+</body>
+</html>
