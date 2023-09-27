@@ -3,13 +3,13 @@
 var person = {
     firstName : 'turtle',
     last-name : 'park'
-    };
+};
 console.log(person); // 에러 출력됨 ('-'(Hyphen)이 들어있을 경우 ""(Double quotes) 필요)
 //==============================================
 var word1 = {
     var: '',
     function: ''
-    };
+};
 console.log(word1); // { var: '', function: '' }
 //==============================================
 //프로퍼티 키 동적 생성
@@ -25,20 +25,20 @@ console.log(objES6); // { HELL: 'o' }
 //==============================================
 var emptyObj = {
     '' : ''
-    };
+};
 console.log(emptyObj); // { '': '' }
 //==============================================
 var numObj = {
     1 : 0,
     2 : 1,
     3 : 2
-    };
+};
 console.log(numObj); // { '1': 0, '2': 1, '3': 2 }
 //==============================================
 var duplicateObj = {
     name : 'park',
     name : 'kim'
-    };
+};
 console.log(duplicateObj); // { name: 'kim' }
 //==============================================
 
@@ -49,17 +49,17 @@ console.log(duplicateObj); // { name: 'kim' }
 var wind = {
     'last-name' : 'park',
     1: 10
-  };
+};
   
-  wind.last-name; // Error
-  wind.last-name; // Error
+wind.last-name; // Error
+wind.last-name; // Error
   
-  //wind[last-name]; // Error
-  wind['last-name'];
+wind[last-name]; // Error
+wind['last-name'];
   
-  wind.1; // Error
-  wind.'1'; // Error
-  wind[1];
-  wind['1']
+wind.1; // Error
+wind.'1'; // Error
+wind[1];
+wind['1']
 
 /* ---------------------------------------------------------------------- */
