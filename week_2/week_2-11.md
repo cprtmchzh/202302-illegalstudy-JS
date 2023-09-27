@@ -39,6 +39,7 @@ console.log(shallow[0] === objects[0]);
 #### 얕은 복사
 - `for … in` 을 활용한 얕은 복사
 <br>
+
   ```
   var copyShallo = function (obj) {
   var result = {};
@@ -53,6 +54,7 @@ console.log(shallow[0] === objects[0]);
 #### 깊은 복사
 - 재귀 함수를 활용한 깊은 복사
 <br>
+
   ```
   var deepCopy = function (obj) {
   var result = {};
