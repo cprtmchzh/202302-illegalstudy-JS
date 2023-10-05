@@ -88,7 +88,111 @@ console.log(factorial(10));
 
 /* 9. callback 지옥을 만들어 보고 calllback 지옥이 왜 위험한지 서술하시오.*/
 
+function taskA(a, b, cb) {
+    setTimeout(() => {
+      const res = a + b;
+      cb(res);
+    }, 3000);
+  }
+    
+  function taskB(a, cb) {
+    setTimeout(() => {
+      const res = a * 2;
+      cb(res);
+    }, 1000);
+  }
+    
+  function taskC(a, cb) {
+    setTimeout(() => {
+      const res = a - 8;
+      cb(res);
+    }, 2000);
+  }
+  
+  function taskD(a, cb) {
+    setTimeout(() => {
+      const res = a / 2;
+      cb(res);
+    }, 3000);
+  }
+  
+  function taskE(a, cb) {
+    setTimeout(() => {
+      const res = a + 7;
+      cb(res);
+    }, 2000);
+  }
+  
+  function taskF(a, cb) {
+    setTimeout(() => {
+      const res = a / 2;
+      cb(res);
+    }, 1000);
+  }
+  
+  function taskG(a, cb) {
+    setTimeout(() => {
+      const res = a * 4;
+      cb(res);
+    }, 3000);
+  }
+  
+  function taskH(a, cb) {
+    setTimeout(() => {
+      const res = a * 5;
+      cb(res);
+    }, 1000);
+  }
+  
+  function taskI(a, cb) {
+    setTimeout(() => {
+      const res = a / 4;
+      cb(res);
+    }, 2000);
+  }
+  
+  function taskJ(a, cb) {
+    setTimeout(() => {
+      const res = a - 12;
+      cb(res);
+    }, 4000);
+  }
+    
+  taskA(3, 4, (a_res) => {
+    console.log("step1 : ", a_res);
+    taskB(a_res, (b_res) => {
+      console.log("step2 : ", b_res);
+      taskC(b_res, (c_res) => {
+        console.log("step3 : ", c_res);
+        taskD(c_res, (d_res) => {
+          console.log("step4 : ", d_res);
+          taskE(d_res, (e_res) => {
+            console.log("step5 : ", e_res);
+            taskF(e_res, (f_res) => {
+              console.log("step6 : ", f_res);
+              taskG(f_res, (g_res) => {
+                console.log("step7 : ", g_res);
+                taskH(g_res, (h_res) => {
+                  console.log("step8 : ", h_res);
+                  taskI(h_res, (i_res) => {
+                    console.log("step9 : ", i_res);
+                    taskJ(i_res, (j_res) => {
+                      console.log("step10 : ", j_res);
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
 
+  /**
+ * 콜백 지옥이 발생할 경우 코드의 가독성이 떨어지고, 이후 유지보수에 어려움이 발생하므로
+ * 무분별한 콜백 사용을 지양하는 것이 좋음
+ */
 
 /* ---------------------------------------------------------------------- */
 
