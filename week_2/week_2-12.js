@@ -208,7 +208,7 @@ count = increase(count);
 console.log(count);
 
 count = increase(count);
-console.log(count); // 비순수 함수
+console.log(count); // 순수 함수
 
 //-----------------------------------------------
 
@@ -222,11 +222,11 @@ count = increase(count);
 console.log(count);
 
 count = increase(count);
-console.log(count); // 순수 함수
+console.log(count); // 비순수 함수
 
 /**
- * 첫 번째 코드에서는 함수 내 n이라는 변수가 변수 count로 인해 변경되었기 때문에 비순수 함수임
- * 두 번째 코드에서는 count라는 변수가 어떠한 외부의 상태에 영향을 받지 않으므로 순수 함수임
+ * 첫 번째 코드에서는 함수가 전달받은 인수 이외의 어떠한 것에도 영향을 받지 않으므로 순수 함수임
+ * 두 번째 코드에서는 함수가 전달받은 인수 이외에도 전역변수 count의 영향을 받으므로 비순수 함수임
  */
 
 /* ---------------------------------------------------------------------- */
