@@ -5,9 +5,9 @@
 
 **[Execution Context](https://tc39.es/ecma262/#sec-execution-contexts)**
 
-`Execution Context(실행 컨텍스트)`는 실행할 코드에 제공할 환경 정보들을 모아놓은 객체로, **자바스크립트 코드가 실행되는 환경**이다. 모든 자바스크립트 코드는 컨텍스트 내부에서 실행된다.
+`Execution Context(실행 컨텍스트)`는 실행할 코드에 제공할 환경 정보들을 모아놓은 객체로, **자바스크립트 코드가 실행되는 환경**이다. 모든 자바스크립트 코드는 컨텍스트 내부에서 실행된다. 또한 식별자를 등록하고 관리하는 스코프와 코드 실행 순서 관리를 구현한 내부 매커니즘으로, 자바스크립트의 핵심 원리다.
 
-자바스크립트에서 함수가 실행되면 실행된 함수에 해당하는 `Execution Context`가 생성되고, 자바스크립트 엔진에 있는 콜 스택에 쌓이게 된다. 이후 가장 위에 쌓여있는 컨텍스트와 관련된 코드를 실행하면서(LIFO), 전체 코드의 환경과 순서를 보장하게 된다. `Execution Context`는 식별자를 등록하고 관리하는 스코프와 코드 실행 순서 관리를 구현한 내부 매커니즘으로, 자바스크립트의 핵심 원리다.
+자바스크립트에서 함수가 실행되면 실행된 함수에 해당하는 `Execution Context`가 생성되고, 자바스크립트 엔진에 있는 콜 스택에 쌓이게 된다. 이후 가장 위에 쌓여있는 컨텍스트와 관련된 코드를 실행하면서(LIFO), 전체 코드의 환경과 순서를 보장하게 된다.
 
 **Execution Context의 생성**
 
@@ -17,13 +17,13 @@
 
 `Execution Context`의 내부에는 `Variable Environment`, `Lexical Environment`, `this binding`이 있다.
 
-`Variable Environment`에는 `Environment Record(현재 컨텍스트 내부의 식별자 정보)`, `Outer Environment Reference(외부 환경 정보)`가 저장된다. 이때 저장된 정보는 변하지 않는다. 
+`Variable Environment`에는 `Environment Record(현재 컨텍스트 내부의 식별자 정보)`와 `Outer Environment Reference(외부 환경 정보)`가 저장된다. 이때 저장된 정보는 변하지 않는다. 
 
 `Lexical Environment`에는 처음에는 `Variable Environment`의 정보가 복사되지만, 이후 정보가 변경될 경우 변경 사항이 실시간으로 적용된다. 즉, `Variable Environment`가 초기 상태를 기억하고 있으며, `Lexical Environment`가 최신 상태를 저장하고 있는 형태인 것이다.
 
 **[Lexical Environment](https://262.ecma-international.org/8.0/#sec-lexical-environments)**
 
-`Lexical Environment`는 `Execution Context`의 구성 중 하나이다. 자바스크립트에서는 실행 중인 `function(함수)`, `{...}(블록)`, `script(스크립트)`를 실행하기에 앞서 `Lexical Environment` 라는 내부 숨김 연관 객체(internal hidden associated object)를 생성한다. 이때 `Lexical Environment`는 실행할 스코프 범위 안에 있는 **변수와 함수를 프로퍼티로 저장하는 객체**를 의미하며 두 가지 환경으로 구성된다.
+`Lexical Environment`는 `Execution Context`의 구성 중 하나이다. 자바스크립트에서는 실행 중인 `function`, `{...}`, `script`를 실행하기에 앞서 `Lexical Environment` 라는 내부 숨김 연관 객체(internal hidden associated object)를 생성한다. 이때 `Lexical Environment`는 실행할 스코프 범위 안에 있는 **변수와 함수를 프로퍼티로 저장하는 객체**를 의미하며 두 가지 환경으로 구성된다.
 
 **Lexical Environment 환경 구성**
 - `Environment Record(환경 레코드)` : 모든 지역 변수를 프로퍼티로 저장하고 있는 객체로, this와 같은 기타 정보 또한 여기에 저장
